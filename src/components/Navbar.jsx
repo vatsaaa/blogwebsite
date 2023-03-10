@@ -9,11 +9,13 @@ import {
     setSignedIn,
     setUserData,
 } from "../features/userSlice";
+import Profile from './Profile';
+import OPLSettings from './OPLSettings.jsx';
 
 import '../styling/Navbar.css';
 
 const Navbar = () => {
-    const [inputValue, setInputValue] = useState("tech");
+    const [inputValue, setInputValue] = useState("");
     const isSignedIn = useSelector(selectSignedIn);
     const userData = useSelector(selectUserData);
     const [anchorEl, setAnchorEl] = useState(null);
@@ -72,8 +74,8 @@ const Navbar = () => {
                         open={Boolean(anchorEl)}
                         onClose={handleCloseMenu}
                     >
-                        <MenuItem onClick={handleCloseMenu}>Profile</MenuItem>
-                        <MenuItem onClick={handleCloseMenu}>Settings</MenuItem>
+                        <MenuItem onClick={handleCloseMenu}><Profile /></MenuItem>
+                        <MenuItem onClick={handleCloseMenu}><OPLSettings /></MenuItem>
                         <MenuItem onClick={handleCloseMenu}>
                             <GoogleLogout 
                                 clientId="641688470754-q7l7t87eo9nnu8q52338kitlapk2on30.apps.googleusercontent.com"

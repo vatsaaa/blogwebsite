@@ -31,7 +31,7 @@ const Homepage = () => {
                     disabled={renderProps.disabled}
                     className="login__button"
                 >
-                    Login with Google
+                  Login with Google
                 </button>
             )}
             onSuccess={login}
